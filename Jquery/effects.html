@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI hide Example</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- CSS -->
+    <style>
+        .toggler-1 {
+            width: 500px;
+            height: 200px;
+        }
+
+        #button-1 {
+            padding: .5em 1em;
+            text-decoration: none;
+        }
+
+        #effect-1 {
+            width: 240px;
+            height: 160px;
+            padding: 0.4em;
+            position: relative;
+        }
+
+        #effect-1 h3 {
+            margin: 0;
+            padding: 0.4em;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(function () {
+            function runEffect() {
+                $("#effect-1").hide("shake", { times: 10, distance: 200 }, 1000, callback);
+            };
+              
+            function callback() {
+                setTimeout(function () {
+                    $("#effect-1").removeAttr("style").hide().fadeIn();
+                }, 1000);
+            };
+             
+            $("#button-1").click(function () {
+                runEffect();
+                return false;
+            });
+        });  
+    </script>
+
+    <style>
+        .toggler {
+            width: 500px;
+            height: 200px;
+        }
+
+        #button {
+            padding: .5em 1em;
+            text-decoration: none;
+        }
+
+        #effect {
+            width: 240px;
+            height: 155px;
+            padding: 0.4em;
+            position: relative;
+        }
+
+        #effect h3 {
+            margin: 0;
+            padding: 0.4em;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(function () {
+             
+            function runEffect() {
+                 
+                $("#effect").show("shake", { times: 15, distance: 200 }, 1000, callback);
+            };
+            
+            function callback() {
+                setTimeout(function () {
+                    $("#effect:visible").removeAttr("style").fadeOut();
+                }, 1000);
+            };
+            $("#button").click(function () {
+                runEffect();
+                return false;
+            });
+            $("#effect").hide();
+        });  
+    </script>
+
+    <style>
+        .toggler {
+            width: 500px;
+            height: 200px;
+        }
+
+        #button {
+            padding: .5em 1em;
+            text-decoration: none;
+        }
+
+        #effect {
+            width: 240px;
+            height: 155px;
+            padding: 0.4em;
+            position: relative;
+        }
+
+        #effect h3 {
+            margin: 0;
+            padding: 0.4em;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(function () {
+            function runEffect() {
+                $("#effect").toggle('explode', 300);
+            };
+            $("#button").click(function () {
+                runEffect();
+                return false;
+            });
+        });  
+    </script>
+    <style>
+        .elemClass {
+            width: 300px;
+            height: 100px;
+            background-color: #76eec6;
+        }
+
+        .myClass {
+            font-size: 30px;
+            background-color: #eed5b7;
+            color: #0000ee;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.button').click(function () {
+                if (this.id == "add") {
+                    $('#animTarget').addClass("myClass", "fast")
+                } else {
+                    $('#animTarget').removeClass("myClass", "fast")
+                }
+            })
+        });  
+    </script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        .toggler {
+            width: 500px;
+            height: 200px;
+            position: relative;
+        }
+
+        #button {
+            padding: .5em 1em;
+            text-decoration: none;
+        }
+
+        #effect {
+            width: 240px;
+            height: 135px;
+            padding: 0.4em;
+            position: relative;
+            background: #fff;
+        }
+
+        #effect h3 {
+            margin: 0;
+            padding: 0.4em;
+            text-align: center;
+        }
+    </style>
+    <script>
+        $(function () {
+            var state = true;
+            $("#button").click(function () {
+                if (state) {
+                    $("#effect").animate({
+                        backgroundColor: "#aa0000",
+                        color: "#fff",
+                        width: 500
+                    }, 1000);
+                } else {
+                    $("#effect").animate({
+                        backgroundColor: "#fff",
+                        color: "#000",
+                        width: 240
+                    }, 1000);
+                }
+                state = !state;
+            });
+        });  
+    </script>
+
+    <style>
+        #box-1 {
+            height: 50px;
+            width: 100px;
+            background: #7fffd4;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#box-1').click(function () {
+                $("#box-1").effect("shake", {
+                    times: 10,
+                    distance: 150
+                }, 3000, function () {
+                    $(this).css("background", "#ff4040");
+                });
+            });
+        });  
+    </script>
+</head>
+
+<body>
+    <div class="toggler-1">
+        <div id="effect-1" class="ui-widget-content ui-corner-all">
+            <h3 class="ui-widget-header ui-corner-all">Hide</h3>
+            <p>
+                JavaTpoint provides easy and point to point learning of various tutorials such as Java Tutorial, Core
+                Java Tutorial, Android, Design Pattern, JavaScript, AJAX, SQL, Cloud Computing, Python etc.
+            </p>
+        </div>
+    </div>
+    <a href="#" id="button-1" class="ui-state-default ui-corner-all">Shake Effect Hide</a>
+    <hr style="height:5px ; width:auto; background-color: black;">
+
+    <section>
+        <div class="toggler">
+            <div id="effect" class="ui-widget-content ui-corner-all">
+                <h3 class="ui-widget-header ui-corner-all">Show</h3>
+                <p>
+                    JavaTpoint provides easy and point to point learning of various tutorials such as
+                    Java Tutorial, Core Java Tutorial, Android, Design Pattern, JavaScript, AJAX, Python etc.
+                </p>
+            </div>
+        </div>
+        <a href="#" id="button" class="ui-state-default ui-corner-all">Show method with Shake effect</a>
+    </section>
+    <hr style="height:5px ; width:auto; background-color: black;">
+    <section>
+        <div class="toggler">
+            <div id="effect" class="ui-widget-content ui-corner-all">
+                <h3 class="ui-widget-header ui-corner-all">Toggle</h3>
+                <p>
+                    JavaTpoint provides easy and point to point learning of various tutorials such as
+                    Java Tutorial, Core Java Tutorial, Android, Design Pattern, JavaScript, AJAX, SQL, Python etc.
+                </p>
+            </div>
+        </div>
+        <a href="#" id="button" class="ui-state-default ui-corner-all">Togglemethod with explode effect</a>
+    </section>
+    <hr style="height:5px ; width:auto; background-color: black;">
+
+    <section>
+        <div id=animTarget class="elemClass">
+            Hello! JavaTpoint
+        </div>
+        <button class="button" id="add">Add Class</button>
+        <button class="button" id="remove">Remove Class</button>
+    </section>
+    <hr style="height:5px ; width:auto; background-color: black;">
+
+    <section>
+        <div class="toggler">
+            <div id="effect" class="ui-widget-content ui-corner-all">
+                <h3 class="ui-widget-header ui-corner-all">Animate</h3>
+                <p>
+                    jQuery is a fast, small, cross-platform and feature-rich JavaScript library. It is designed to
+                    simplify the client-side scripting of HTML.
+                </p>
+            </div>
+        </div>
+        <button id="button" class="ui-state-default ui-corner-all">Toggle Effect</button>
+    </section>
+    <hr style="height:5px ; width:auto; background-color: black;">
+    <section>
+        <div id="box-1">Click here to<br /><b>Shake Me!</b></div>
+    </section>
+</body>
+
+</html>
